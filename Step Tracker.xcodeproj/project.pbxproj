@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		62855A942D012F70009D9E01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62855A8E2D012F70009D9E01 /* Preview Assets.xcassets */; };
+		62855A952D012F70009D9E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62855A902D012F70009D9E01 /* Assets.xcassets */; };
+		62855A962D012F70009D9E01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62855A912D012F70009D9E01 /* ContentView.swift */; };
+		62855A972D012F70009D9E01 /* Step_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62855A922D012F70009D9E01 /* Step_TrackerApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		622EA2F52D012D370081F4BD /* Step Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Step Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62855A8E2D012F70009D9E01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		62855A902D012F70009D9E01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		62855A912D012F70009D9E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		62855A922D012F70009D9E01 /* Step_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step_TrackerApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		622EA2F72D012D370081F4BD /* Step Tracker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Step Tracker";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		622EA2F22D012D370081F4BD /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		622EA2EC2D012D370081F4BD = {
 			isa = PBXGroup;
 			children = (
-				622EA2F72D012D370081F4BD /* Step Tracker */,
+				62855A932D012F70009D9E01 /* Step Tracker */,
 				622EA2F62D012D370081F4BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,25 @@
 				622EA2F52D012D370081F4BD /* Step Tracker.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		62855A8F2D012F70009D9E01 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				62855A8E2D012F70009D9E01 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62855A932D012F70009D9E01 /* Step Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				62855A8F2D012F70009D9E01 /* Preview Content */,
+				62855A902D012F70009D9E01 /* Assets.xcassets */,
+				62855A912D012F70009D9E01 /* ContentView.swift */,
+				62855A922D012F70009D9E01 /* Step_TrackerApp.swift */,
+			);
+			path = "Step Tracker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +81,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				622EA2F72D012D370081F4BD /* Step Tracker */,
 			);
 			name = "Step Tracker";
 			packageProductDependencies = (
@@ -109,6 +128,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62855A942D012F70009D9E01 /* Preview Assets.xcassets in Resources */,
+				62855A952D012F70009D9E01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62855A962D012F70009D9E01 /* ContentView.swift in Sources */,
+				62855A972D012F70009D9E01 /* Step_TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +290,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.akremnev.Step-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -296,6 +323,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "co.akremnev.Step-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
