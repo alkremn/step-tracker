@@ -16,6 +16,50 @@ import Observation
     
     let types: Set = [HKQuantityType(.stepCount), HKQuantityType(.bodyMass)]
     
+    func fetchStepCount() async {
+        let today = Calendar.current.startOfDay(for: .now)
+        let endDate = Calendar.current.date(byAdding: .day, value: 1, to: today)!
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+        
+        let queryPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        let samplePredicate = HKSamplePredicate.quantitySample(type: HKQuantityType(.stepCount), predicate: queryPredicate)
+        let sumsOfStepsQuery = HKStatisticsCollectionQueryDescriptor(
+            predicate: samplePredicate,
+            options: .cumulativeSum,
+            anchorDate: endDate,
+            intervalComponents: .init(day: 1)
+        )
+        
+        let stepsCount = try! await sumsOfStepsQuery.result(for: store)
+        
+        for steps in stepsCount.statistics() {
+            print(steps.sumQuantity() ?? 0)
+        }
+        
+    }
+    
+    func fetchWeight() async {
+        let today = Calendar.current.startOfDay(for: .now)
+        let endDate = Calendar.current.date(byAdding: .day, value: 1, to: today)!
+        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+        
+        let queryPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
+        let samplePredicate = HKSamplePredicate.quantitySample(type: HKQuantityType(.bodyMass), predicate: queryPredicate)
+        let weightQuery = HKStatisticsCollectionQueryDescriptor(
+            predicate: samplePredicate,
+            options: .mostRecent,
+            anchorDate: endDate,
+            intervalComponents: .init(day: 1)
+        )
+        
+        let weights = try! await weightQuery.result(for: store)
+        
+        for weight in weights.statistics() {
+            print(weight.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
+        }
+        
+    }
+    
 //    func addSeedData() async {
 //        var seedData: [HKQuantitySample] = []
 //        

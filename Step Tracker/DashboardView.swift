@@ -87,7 +87,6 @@ struct DashboardView: View {
             }
             .padding()
             .task() {
-                print(hasSeenPermissionPriming)
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }
             .navigationTitle("Dashboard")
