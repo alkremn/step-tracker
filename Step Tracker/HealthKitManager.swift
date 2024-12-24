@@ -16,10 +16,13 @@ import Observation
     
     let types: Set = [HKQuantityType(.stepCount), HKQuantityType(.bodyMass)]
     
+    var stepData: [HealthMetric] = []
+    var weightData: [HealthMetric] = []
+    
     func fetchStepCount() async {
         let today = Calendar.current.startOfDay(for: .now)
         let endDate = Calendar.current.date(byAdding: .day, value: 1, to: today)!
-        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+        let startDate = Calendar.current.date(byAdding: .day, value: -28, to: endDate)!
         
         let queryPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
         let samplePredicate = HKSamplePredicate.quantitySample(type: HKQuantityType(.stepCount), predicate: queryPredicate)
@@ -31,17 +34,15 @@ import Observation
         )
         
         let stepsCount = try! await sumsOfStepsQuery.result(for: store)
-        
-        for steps in stepsCount.statistics() {
-            print(steps.sumQuantity() ?? 0)
+        stepData = stepsCount.statistics().map {
+            .init(date: $0.startDate, value: $0.sumQuantity()?.doubleValue(for: .count()) ?? 0)
         }
-        
     }
     
     func fetchWeight() async {
         let today = Calendar.current.startOfDay(for: .now)
         let endDate = Calendar.current.date(byAdding: .day, value: 1, to: today)!
-        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: endDate)!
+        let startDate = Calendar.current.date(byAdding: .day, value: -28, to: endDate)!
         
         let queryPredicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate)
         let samplePredicate = HKSamplePredicate.quantitySample(type: HKQuantityType(.bodyMass), predicate: queryPredicate)
@@ -54,10 +55,9 @@ import Observation
         
         let weights = try! await weightQuery.result(for: store)
         
-        for weight in weights.statistics() {
-            print(weight.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
+        weightData = weights.statistics().map {
+            .init(date: $0.startDate, value: $0.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
         }
-        
     }
     
 //    func addSeedData() async {
