@@ -19,6 +19,7 @@
 		62D164EE2D4FF43E007DE808 /* ChartDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D164ED2D4FF43E007DE808 /* ChartDataTypes.swift */; };
 		62D164F12D4FF502007DE808 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D164F02D4FF502007DE808 /* Date+Ext.swift */; };
 		62D164F42D4FF846007DE808 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 62D164F32D4FF846007DE808 /* Algorithms */; };
+		62D164F62D4FFD7A007DE808 /* StepPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D164F52D4FFD7A007DE808 /* StepPieChart.swift */; };
 		62E8D85D2D1B519F00E74568 /* HealthMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E8D85C2D1B519F00E74568 /* HealthMetric.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		62D164EB2D4FF415007DE808 /* ChartMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartMath.swift; sourceTree = "<group>"; };
 		62D164ED2D4FF43E007DE808 /* ChartDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataTypes.swift; sourceTree = "<group>"; };
 		62D164F02D4FF502007DE808 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		62D164F52D4FFD7A007DE808 /* StepPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPieChart.swift; sourceTree = "<group>"; };
 		62E8D85C2D1B519F00E74568 /* HealthMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMetric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				625DFAFE2D4F317A00B1BAAB /* StepBarChart.swift */,
+				62D164F52D4FFD7A007DE808 /* StepPieChart.swift */,
 				62D164EB2D4FF415007DE808 /* ChartMath.swift */,
 				62D164ED2D4FF43E007DE808 /* ChartDataTypes.swift */,
 			);
@@ -221,6 +224,7 @@
 				62D164EC2D4FF415007DE808 /* ChartMath.swift in Sources */,
 				62E8D85D2D1B519F00E74568 /* HealthMetric.swift in Sources */,
 				62D164EE2D4FF43E007DE808 /* ChartDataTypes.swift in Sources */,
+				62D164F62D4FFD7A007DE808 /* StepPieChart.swift in Sources */,
 				62D164F12D4FF502007DE808 /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
