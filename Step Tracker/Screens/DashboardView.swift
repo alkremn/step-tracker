@@ -86,3 +86,4 @@ struct DashboardView: View {
     DashboardView()
         .environment(HealthKitManager())
 }
+ 
